@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Books Hub - GATE & Govt Jobs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">📚 CS Books Hub</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#gate">GATE</a></li>
+                <li><a href="#govt">Govt Jobs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Computer Science Books</h1>
+            <p>Best Books for GATE, Govt Jobs & Interview Preparation</p>
+            <input type="text" id="searchBox" placeholder="🔍 Search books..." onkeyup="searchBooks()">
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="filters">
+        <button class="filter-btn active" onclick="filterBooks('all', this)">All</button>
+        <button class="filter-btn" onclick="filterBooks('gate', this)">GATE</button>
+        <button class="filter-btn" onclick="filterBooks('govt', this)">Govt Jobs</button>
+        <button class="filter-btn" onclick="filterBooks('interview', this)">Interview</button>
+    </section>
+
+    <!-- Books Section -->
+    <section class="books-section" id="books">
+        <h2 class="section-title">Popular Books</h2>
+        <div class="books-grid" id="booksGrid">
+
+            <div class="book-card" data-category="gate">
+                <div class="book-cover">📘</div>
+                <h3>Data Structures & Algorithms</h3>
+                <p class="author">By Narasimha Karumanchi</p>
+                <span class="tag gate-tag">GATE</span>
+                <p class="price">₹450</p>
+                <button class="btn" onclick="showDetails('Data Structures & Algorithms', 'Narasimha Karumanchi', 'GATE')">View Details</button>
+            </div>
+
+            <div class="book-card" data-category="gate">
+                <div class="book-cover">📕</div>
+                <h3>Operating System Concepts</h3>
+                <p class="author">By Silberschatz</p>
+                <span class="tag gate-tag">GATE</span>
+                <p class="price">₹650</p>
+                <button class="btn" onclick="showDetails('Operating System Concepts', 'Silberschatz', 'GATE')">View Details</button>
+            </div>
+
+            <div class="book-card" data-category="gate">
+                <div class="book-cover">📗</div>
+                <h3>Computer Networks</h3>
+                <p class="author">By Tanenbaum</p>
+                <span class="tag gate-tag">GATE</span>
+                <p class="price">₹700</p>
+                <button class="btn" onclick="showDetails('Computer Networks', 'Tanenbaum', 'GATE')">View Details</button>
+            </div>
+
+            <div class="book-card" data-category="govt">
+                <div class="book-cover">📙</div>
+                <h3>DBMS Complete Guide</h3>
+                <p class="author">By Korth</p>
+                <span class="tag govt-tag">Govt Jobs</span>
+                <p class="price">₹550</p>
+                <button class="btn" onclick="showDetails('DBMS Complete Guide', 'Korth', 'Govt Jobs')">View Details</button>
+            </div>
+
+            <div class="book-card" data-category="govt">
+                <div class="book-cover">📔</div>
+                <h3>Computer Organization</h3>
+                <p class="author">By Carl Hamacher</p>
+                <span class="tag govt-tag">Govt Jobs</span>
+                <p class="price">₹600</p>
+                <button class="btn" onclick="showDetails('Computer Organization', 'Carl Hamacher', 'Govt Jobs')">View Details</button>
+            </div>
+
+            <div class="book-card" data-category="interview">
+                <div class="book-cover">📓</div>
+                <h3>Cracking the Coding Interview</h3>
+                <p class="author">By Gayle McDowell</p>
+                <span class="tag interview-tag">Interview</span>
+                <p class="price">₹800</p>
+                <button class="btn" onclick="showDetails('Cracking the Coding Interview', 'Gayle McDowell', 'Interview')">View Details</button>
+            </div>
+
+            <div class="book-card" data-category="gate">
+                <div class="book-cover">📘</div>
+                <h3>Theory of Computation</h3>
+                <p class="author">By Michael Sipser</p>
+                <span class="tag gate-tag">GATE</span>
+                <p class="price">₹500</p>
+                <button class="btn" onclick="showDetails('Theory of Computation', 'Michael Sipser', 'GATE')">View Details</button>
+            </div>
+
+            <div class="book-card" data-category="govt">
+                <div class="book-cover">📕</div>
+                <h3>Programming in C</h3>
+                <p class="author">By Dennis Ritchie</p>
+                <span class="tag govt-tag">Govt Jobs</span>
+                <p class="price">₹350</p>
+                <button class="btn" onclick="showDetails('Programming in C', 'Dennis Ritchie', 'Govt Jobs')">View Details</button>
+            </div>
+
+        </div>
+        <p id="noResult" class="no-result">😕 No books found!</p>
+    </section>
+
+    <!-- GATE Info -->
+    <section class="info-section" id="gate">
+        <h2 class="section-title">🎯 GATE Preparation</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>📖 Syllabus Coverage</h3>
+                <p>Complete GATE CS syllabus — DS, Algo, OS, DBMS, CN, TOC, Compiler, COA, Maths.</p>
+            </div>
+            <div class="info-card">
+                <h3>🎥 Video Lectures</h3>
+                <p>Top educators ki free video lectures ke saath concept clarity paayein.</p>
+            </div>
+            <div class="info-card">
+                <h3>📝 Mock Tests</h3>
+                <p>Previous year papers aur full-length mock tests se apni taiyari check karein.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Govt Jobs Info -->
+    <section class="info-section" id="govt">
+        <h2 class="section-title">💼 Govt Jobs Preparation</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🏛️ SSC / RRB</h3>
+                <p>Computer knowledge section ke liye best study material aur books.</p>
+            </div>
+            <div class="info-card">
+                <h3>🛡️ Defence Exams</h3>
+                <p>NDA, CDS, AFCAT ke computer science topics ki puri taiyari.</p>
+            </div>
+            <div class="info-card">
+                <h3>📋 Banking Exams</h3>
+                <p>IBPS, SBI PO/Clerk ke IT Officer ke liye specialized books.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">📞 Contact Us</h2>
+        <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 CS Books Hub | Made with ❤️ for CS Students</p>
+    </footer>
+
+    <!-- Modal for Book Details -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalAuthor"></p>
+            <p id="modalCategory"></p>
+            <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
