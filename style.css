@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    padding: 15px 40px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1600') center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+#searchBox {
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ---------- Filters ---------- */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border: 2px solid #1e3c72;
+    background: white;
+    color: #1e3c72;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #1e3c72;
+    color: white;
+}
+
+/* ---------- Section Title ---------- */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #1e3c72;
+    margin-bottom: 30px;
+}
+
+/* ---------- Books Grid ---------- */
+.books-section {
+    padding: 40px 40px 60px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.book-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.book-cover {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.book-card h3 {
+    font-size: 17px;
+    color: #1e3c72;
+    margin-bottom: 8px;
+    min-height: 45px;
+}
+
+.author {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.gate-tag { background: #e67e22; }
+.govt-tag { background: #27ae60; }
+.interview-tag { background: #8e44ad; }
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e63946;
+    margin: 8px 0;
+}
+
+.btn {
+    background: #1e3c72;
+    color: white;
+    padding: 9px 22px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #2a5298;
+    transform: scale(1.05);
+}
+
+.no-result {
+    text-align: center;
+    font-size: 20px;
+    color: #888;
+    margin-top: 30px;
+    display: none;
+}
+
+/* ---------- Info Sections ---------- */
+.info-section {
+    padding: 60px 40px;
+    background: white;
+    margin: 20px 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.info-card {
+    background: #f4f6fb;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #1e3c72;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    background: #e8eefb;
+    transform: translateX(5px);
+}
+
+.info-card h3 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact input, .contact textarea {
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: #1e3c72;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background: #1e3c72;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* ---------- Modal ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal-content {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    top: 10px; right: 18px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close:hover { color: #e63946; }
+
+.modal-content h2 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1e3c72;
+        width: 200px;
+        padding: 15px;
+        border-radius: 0 0 0 12px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero h1 { font-size: 30px; }
+    .hero p { font-size: 15px; }
+    .section-title { font-size: 24px; }
+    .books-section { padding: 30px 20px; }
+}
